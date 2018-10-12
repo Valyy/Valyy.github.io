@@ -1,0 +1,1 @@
+document.getElementById("id_business_v").innerHTML="Business V 2018/10/12"
