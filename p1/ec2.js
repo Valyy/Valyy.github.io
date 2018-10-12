@@ -16,10 +16,10 @@ function solve()
 	
 	}
 	else {
-			x1_re= -b / (2*a);
-			x1_im= -Math.sqrt(-delta)/(2*a);
-			x2_re= -b / (2*a);
-			x2_im= -Math.sqrt(-delta)/(2*a);
+			x1_re = -b / (2 * a);
+		x1_im = -Math.sqrt(-delta) / (2 * a);
+		x2_re = -b / (2 * a);
+		x2_im = Math.sqrt(-delta) / (2 * a);
 			
 	}
 	
