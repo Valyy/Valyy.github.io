@@ -45,6 +45,6 @@ function print_solutions(solutions)
 function solve()
 {
 	var coef = read_data();
-	var solutions = solve(coef);
+	var solutions = solve2(coef);
 	print_solutions(solutions);
 }
