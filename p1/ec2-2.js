@@ -13,12 +13,12 @@ function EC2()
 	var delta = this.b * this.b - 4 *this.a * this.c;
 	
 	if (delta >= 0){
-		this.x1 = {re:(-coef.b - Math.sqrt(delta)) / (2 * coef.a), im:0};
-		this.x2 = {re:(-coef.b + Math.sqrt(delta)) / (2 * coef.a), im:0};
+		this.x1 = {re:(-this.b - Math.sqrt(delta)) / (2 * this.a), im:0};
+		this.x2 = {re:(-this.b + Math.sqrt(delta)) / (2 * this.a), im:0};
 	}
 	else{
-		this.x1 = {re:-coef.b / (2 * coef.a),im:-Math.sqrt(-delta) / (2 * coef.a)};
-		this.x2 = {re:-coef.b / (2 * coef.a),im: Math.sqrt(-delta) / (2 * coef.a)};
+		this.x1 = {re:-this.b / (2 * this.a),im:-Math.sqrt(-delta) / (2 * this.a)};
+		this.x2 = {re:-this.b / (2 * this.a),im: Math.sqrt(-delta) / (2 * this.a)};
 	}	
 
 		
