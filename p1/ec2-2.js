@@ -17,8 +17,8 @@ function EC2()
 		this.x2 = {re:(-coef.b + Math.sqrt(delta)) / (2 * coef.a), im:0};
 	}
 	else{
-		this.x1 = {re:-coef.b / (2 * coef.a);x1_im = -Math.sqrt(-delta) / (2 * coef.a);
-		this.x2 = {re:-coef.b / (2 * coef.a);x2_im = Math.sqrt(-delta) / (2 * coef.a);
+		this.x1 = {re:-coef.b / (2 * coef.a),im:-Math.sqrt(-delta) / (2 * coef.a)};
+		this.x2 = {re:-coef.b / (2 * coef.a),im: Math.sqrt(-delta) / (2 * coef.a)};
 	}	
 
 		
