@@ -25,5 +25,7 @@ function on_device_motion(e)
   document.getElementById("id_acc_z").innerHTML = e.accelerationIncludingGravity.z;
   document.getElementById("id_acc_x").innerHTML = e.accelerationIncludingGravity.x;
   document.getElementById("id_acc_y").innerHTML = e.accelerationIncludingGravity.y;
+  document.getElementById("id_rot_x").innerHTM = Math.atan(e.accelerationIncludingGravity.x/e.accelerationIncludingGravity.z);
+  document.getElementById("id_rot_y").innerHTM = Math.atan(e.accelerationIncludingGravity.y/e.accelerationIncludingGravity.z);
 
 }
