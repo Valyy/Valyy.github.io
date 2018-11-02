@@ -1,7 +1,7 @@
 
 var stopped = false;
 onmessage = function(e) {
-  if (e.data == "stop") {continue;}
+  if (e.data == "stop") //{continue;}
   stopped = true;
 }
 //------------------------------
@@ -12,9 +12,19 @@ function is_prime(n)
       return false;
   return true;
 }
+function calcul_prime(start_value)
+{
+if (stopped);
+else{
 //---------------------------------
-for (var i = 1e11; i < 1e12; i++)
+for (var i = start_value; i < start_value + 1000; i++)
   if (is_prime(i))
     postMessage(i);
-
-postMessage("Done");
+start_value += 1000;
+if (start_value < 1e12)
+setTimeout(calcul_prime, 1, start_value);
+else
+  postMessage("Done");
+    }
+}
+calcul_prime(1e11);
