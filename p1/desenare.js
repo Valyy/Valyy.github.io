@@ -27,7 +27,7 @@ function start()
 
 
   id_timer = setInterval(deseneaza_cerc, 10, context, canvas.width, canvas.height, alpha);
-  var my_worker = new Worker("calc_prime.js");
+  my_worker = new Worker("calc_prime.js");
   my_worker.onmessage = function(e){
     document.getElementById("id_prime").innerHTML = e.data;
 
@@ -37,6 +37,7 @@ function start()
 function stop()
 {
   clearInterval(id_timer);
+  my_worker.postMessage("Stop");
   document.getElementById("id_start").disabled=false;
   document.getElementById("id_stop").disabled=true;
 

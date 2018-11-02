@@ -1,5 +1,9 @@
 
-
+var stopped = false;
+onmessage = function(e) {
+  if (e.data == "stop") {continue;}
+  stopped = true;
+}
 //------------------------------
 function is_prime(n)
 {
