@@ -1,6 +1,6 @@
 document.getElementById("id_business_version").innerHTML = "Bussiness version: 2018.11.02 - 02";
 // Set constraints for the video stream
-var constraints = { video: { facingMode: "user" }, audio: false };
+var constraints = { video: { facingMode: "environment" }, audio: false };
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
