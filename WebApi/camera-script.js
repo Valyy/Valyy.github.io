@@ -1,31 +1,30 @@
 document.getElementById("id_business_version").innerHTML = "Bussiness version: 2018.11.02 - 02";
-window.addEventListener("deviceorientation", on_device_orientation);
-window.addEventListener("devicemotion", on_device_motion);
-//------------------------------------------------------
-
-function on_device_orientation(e)
-{
-  document.getElementById("id_z").innerHTML = e.alpha;
-  document.getElementById("id_x").innerHTML = e.beta;
-  document.getElementById("id_y").innerHTML = e.gamma;
-
-  var canvas = document.getElementById("id_canvas");
-  var context = canvas.getContext("2d");
-  var R=10;
-  context.beginPath();
-  context.arc(canvas.width / 2 + e.beta / 90 * (canvas.width/2 - R),
-  canvas.height / 2 + e.gamma / 90 * (canvas.height/2 - R),
-  R,
-  0,2 * Math.PI);
-  context.stroke();
+// Set constraints for the video stream
+var constraints = { video: { facingMode: "user" }, audio: false };
+// Define constants
+const cameraView = document.querySelector("#camera--view"),
+    cameraOutput = document.querySelector("#camera--output"),
+    cameraSensor = document.querySelector("#camera--sensor"),
+    cameraTrigger = document.querySelector("#camera--trigger")
+// Access the device camera and stream to cameraView
+function cameraStart() {
+    navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then(function(stream) {
+        track = stream.getTracks()[0];
+        cameraView.srcObject = stream;
+    })
+    .catch(function(error) {
+        console.error("Oops. Something is broken.", error);
+    });
 }
-//------------------------------------------------------------
-function on_device_motion(e)
-{
-  document.getElementById("id_acc_z").innerHTML = e.accelerationIncludingGravity.z;
-  document.getElementById("id_acc_x").innerHTML = e.accelerationIncludingGravity.x;
-  document.getElementById("id_acc_y").innerHTML = e.accelerationIncludingGravity.y;
-  document.getElementById("id_rot_x").innerHTM = Math.atan(e.accelerationIncludingGravity.x/e.accelerationIncludingGravity.z);
-  document.getElementById("id_rot_y").innerHTM = Math.atan(e.accelerationIncludingGravity.y/e.accelerationIncludingGravity.z);
-
-}
+// Take a picture when cameraTrigger is tapped
+cameraTrigger.onclick = function() {
+    cameraSensor.width = cameraView.videoWidth;
+    cameraSensor.height = cameraView.videoHeight;
+    cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
+    cameraOutput.src = cameraSensor.toDataURL("image/webp");
+    cameraOutput.classList.add("taken");
+};
+// Start the video stream when the window loads
+window.addEventListener("load", cameraStart, false);
