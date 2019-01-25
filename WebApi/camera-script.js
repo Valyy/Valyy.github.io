@@ -1,7 +1,7 @@
 document.getElementById("id_business_version").innerHTML = "Bussiness version: 2019.01.20 - 05";
-// Set constraints for the video stream
+// Settări constante video stream(mode user sau environment)
 var constraints = { video: { facingMode: "environment" }, audio: false };
-// Define constants
+// Constante, definire...
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
@@ -18,7 +18,7 @@ function cameraStart() {
         console.error("Eroare, camera nu poate fi accesată", error);
     });
 }
-// Take a picture when cameraTrigger is tapped
+// Trigger settings pt. capture.
 cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
@@ -26,5 +26,5 @@ cameraTrigger.onclick = function() {
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
 };
-// Start the video stream when the window loads
+// Incepe video stream-ul când se încarcă fereastra.
 window.addEventListener("load", cameraStart, false);
