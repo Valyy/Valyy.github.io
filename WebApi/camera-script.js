@@ -1,7 +1,6 @@
-document.getElementById("id_business_version").innerHTML = "Bussiness version: 2019.01.20 - 06";
+document.getElementById("id_business_version").innerHTML = "Bussiness version: 2019.01.20 - 05";
 // Settări constante video stream(mode user sau environment)
-var constraints = { video: { facingMode: ['user', 'environment'],height: {ideal: 1080},
-        width: {ideal: 1920} }, audio: false };
+var constraints = { video: { facingMode: "environment" }, audio: false };
 // Constante, definire...
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
