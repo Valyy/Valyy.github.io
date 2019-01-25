@@ -1,4 +1,4 @@
-document.getElementById("id_business_version").innerHTML = "Bussiness version: 2018.11.02 - 02";
+document.getElementById("id_business_version").innerHTML = "Bussiness version: 2019.01.20 - 05";
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "environment" }, audio: false };
 // Define constants
@@ -15,7 +15,7 @@ function cameraStart() {
         cameraView.srcObject = stream;
     })
     .catch(function(error) {
-        console.error("Oops. Something is broken.", error);
+        console.error("Eroare, camera nu poate fi accesată", error);
     });
 }
 // Take a picture when cameraTrigger is tapped
