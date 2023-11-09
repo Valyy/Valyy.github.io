@@ -88,9 +88,9 @@ h1.hidden{
     border-bottom: 3px solid #fff;
     border-right: 3px solid #fff;
     transform-origin: 100%;
-    opacity: 0 !important;
+    display: none;
 }
 
 .button.selected .check-mark {
-    opacity: 1 !important;
+    display: block;
 }
