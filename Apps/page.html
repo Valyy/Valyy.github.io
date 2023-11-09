@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Check Your Color</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" type="text/css" href="Assets/index.css">
+<script src="Assets/index.js" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+<body>
+
+<div class="section-box">
+    <div class="center">
+        <h1 class="bg-text">Alege o culoare!</h1>
+    </div>
+</div>
+
+<div class="center buttons">
+    <div class="section-box">
+        <button id="button1" class="button" onclick="showHiddenSection()"><div class="check-mark"></div></button>
+        <button id="button2" class="button" onclick="showHiddenSection()"><div class="check-mark"></div></button>
+        <button id="button3" class="button" onclick="showHiddenSection()"><div class="check-mark"></div></button>
+        <button id="button4" class="button" onclick="showHiddenSection()"><div class="check-mark"></div></button>
+        <button id="button5" class="button" onclick="showHiddenSection()"><div class="check-mark"></div></button>
+        <button id="button6" class="button" onclick="showHiddenSection()"><div class="check-mark"></div></button>
+    </div>
+</div>
+
+<div class="center hidden-section">
+    <div class="section-box">
+        <h1 class="hidden">Bagăți-l în <span class="rainbow-text">cur</span> până la culoarea pe care ai ales-o.</h1>
+    </div>
+    <div class="section-box">
+        <img src="Assets/Colors-Horizontal.jpg" alt="Your choosen Color">
+    </div>
+</div>
+</body>
+</html>
